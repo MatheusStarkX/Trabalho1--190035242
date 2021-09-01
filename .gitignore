@@ -2,8 +2,6 @@
 build/
 *.exe
 *.out
-*.d
-*.o
 
 test_cmake/
 
