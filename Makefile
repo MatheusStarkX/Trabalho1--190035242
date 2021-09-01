@@ -1,22 +1,18 @@
-
-
-
-
-# compilador
+# Compilador
 CC = g++
 
 RMDIR = rm -rdf
 
 RMDIR = rm -f
 
-
 DEP_FLAGS = -M -MT $@ -MT $(BIN_PATH)/$(*F).o -MP -MF $@
-# bibliotecas
+
+# Bibliotecas
 LIBS = -lSDL2 -lSDL2_image -lSDL2_mixer -lSDL2_ttf -lm
 
 INC_PATHS = -I$(INC_PATH) $(addprefix -I,$(SDL_INC_PATH))
 
-# diretivas
+# Diretivas
 FLAGS = -std=c++11 -Wall -pedantic -Wextra -Wno-unused-parameter -Werror=init-self
 
 D_FLAGS = -ggdb -00 -DDEBUG
@@ -28,28 +24,21 @@ SRC_PATH = src
 BIN_PATH = bin
 DEP_PATH = dep
 
-# arquivos
+# Arquivos
 CPP_FILES = $(wildcard $(SRC_PATH)/*.cpp)
 INC_FILES = $(wildcard $(INC_PATH)/*.h)
 FILE_NAMES = $(sort $(notdir $(CPP_FILES:.cpp=)) $(notdir $(INC_FILES:.h=)))
 DEP_FILES = $(addprefix $(DEP_PATH)/,$(addsuffix .d,$(FILE_NAMES)))
 OBJ_FILES = $(addprefix $(BIN_PATH)/,$(notdir $(CPP_FILES:.cpp=.o)))
 
-# executavel
+# Executável
 EXEC = PrimeiroJogo
-
-
-
 
 ifeq ($(OS),Windows_NT)
 
-
 RMDIR = rd /s /q
 
-
 RM = del /q
-
-
 
 SDL_PATHS = C:/SDL2/x86_64-w64-mingw32 C:/Tools/msys64/mingw64
 
@@ -59,16 +48,11 @@ LINK_PATH = $(addprefix -L,$(addsuffix /lib,$(SDL_PATHS)))
 DFLAGS += -mconsole
 LIBS := -lmingw32 -lSDL2main $(LIBS)
 
-
 EXEC := $(EXEC).exe
 
 else
 
 UNAME_S := $(shell uname -s)
-
-
-
-
 
 ifeq ($(UNAME_S), Darwin)
 
@@ -77,22 +61,16 @@ LIBS = -lm -framework SDL2 -framework SDL2_image -framework SDL2_mixer -framewor
 endif
 endif
 
-
-
 .PRECIOUS: $(DEP_FILES)
 .PHONY: release debug clean folders help
 
 all: $(EXEC)
 
-
-
 $(EXEC): $(OBJ_FILES)
 	$(CC) -o $@ $^ $(LINK_PATH) $(LIBS) $(FLAGS)
 
-
 $(BIN_PATH)/%.o: $(DEP_PATH)/%.d | folders
 	$(CC) $(INC_PATHS) $(addprefix $(SRC_PATH)/,$(notdir $(<:.d=.cpp))) -c $(FLAGS) -o $@
-
 
 $(DEP_PATH)/%.d: $(SRC_PATH)/%.cpp |folders
 	$(CC) $(INC_PATHS) $< $(DEP_FLAGS) $(FLAGS)
@@ -117,7 +95,6 @@ debug: $(EXEC)
 # else
 # 	@mkdir -p $(DEP_PATH) $(BIN_PATH) $(INC_PATH) $(SRC_PATH)
 # endif
-
 
 print-% : ; @echo $* = $($*)
 
