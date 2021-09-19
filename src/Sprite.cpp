@@ -52,7 +52,6 @@ void Sprite::Render(){
     printf("Altura: %d", cliprect.h);
     printf("\n\n");
 
-
     if (SDL_RenderCopy(Game::GetInstance("",0,0).GetRenderer(), texture, &cliprect , &dstrect) == -1)
         printf("SDL_RenderCopy com problemas: %s\n", SDL_GetError());
 }

@@ -3,6 +3,12 @@ build/
 *.exe
 *.out
 
+dep/
+*.d
+
+bin/
+*.o
+
 test_cmake/
 
 *.zip
