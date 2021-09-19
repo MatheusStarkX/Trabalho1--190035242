@@ -1,7 +1,10 @@
 # Binary files
-build/
-*.exe
-*.out
+
+.vscode/
+*.json
+
+assets/
+*.
 
 dep/
 *.d
@@ -9,6 +12,5 @@ dep/
 bin/
 *.o
 
-test_cmake/
 
-*.zip
+*.exe
