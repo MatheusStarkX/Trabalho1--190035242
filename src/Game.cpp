@@ -23,7 +23,7 @@ Game::Game(string titulo, int altura, int largura){
         printf("SDL_Init falhou: %s\n", SDL_GetError());
 
     // Inicializa a biblioteca de imagens
-    if (IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF) == 0)
+    if (IMG_Init(IMG_INIT_JPG|IMG_INIT_PNG|IMG_INIT_TIF) == 0)
         printf("IMG_Init falhou: %s\n", SDL_GetError());
 
     // Inicializa a biblioteca de áudio 
@@ -63,7 +63,7 @@ SDL_Renderer *Game::GetRenderer(){
 
 void Game::Run(){
     while(state->QuitRequested() == false){
-        state->Update();
+        state->Update(3);
         state->Render();
         SDL_RenderPresent(renderer);
         SDL_Delay(33);

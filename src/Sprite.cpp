@@ -1,14 +1,11 @@
 #include "Sprite.h"
-//#include "Stage.h"
 #include "Game.h"
 
-//Game jogo = Game::GetInstance();
-
-Sprite::Sprite(){
+Sprite::Sprite(GameObject &associated) : Component(associated) {
     texture = nullptr;
 }
 
-Sprite::Sprite(std::string file){
+Sprite::Sprite(std::string file, GameObject &associated) : Component(associated){
     texture = nullptr;
     Open(file);
 }
@@ -27,25 +24,48 @@ void Sprite::Open(std::string file){
     if(!IsOpen())
         printf("Renderizador com problemas: %s\n", SDL_GetError());
 
-    SDL_QueryTexture(texture, nullptr, nullptr, &largura, &altura);
-    SetClip(0,0,largura,altura);
+    if (SDL_QueryTexture(texture, nullptr, nullptr, &largura, &altura) == -1)
+        printf("Consulta da textura com problemas: %s\n", SDL_GetError());
 }
 
 void Sprite::SetClip(int x, int y, int w, int h){
-    clipRect.x = x;
-    clipRect.y = y;
-    clipRect.w = w;
-    clipRect.h = h;
+    cliprect.x = x;
+    cliprect.y = y;
+    cliprect.w = w;
+    cliprect.h = h;
 }
 
-void Sprite::Render(int x, int y){
+void Sprite::Render(){
     SDL_Rect dstrect;
-    dstrect.x = x;
-    dstrect.y = y;
-    dstrect.w = clipRect.w;
-    dstrect.h = clipRect.h;
-    if (SDL_RenderCopy(Game::GetInstance("",0,0).GetRenderer(), texture, &clipRect , &dstrect) == -1)
+    SetClip(associated.box.CSEx, associated.box.CSEy, associated.box.Larg, associated.box.Alt);
+    dstrect.x = cliprect.x;
+    dstrect.y = cliprect.y;
+    dstrect.w = cliprect.w;
+    dstrect.h = cliprect.h;
+
+    printf("Eixo X: %d", cliprect.x);
+    printf("\n");
+    printf("Eixo Y: %d", cliprect.y);
+    printf("\n");
+    printf("Largura: %d", cliprect.w);
+    printf("\n");
+    printf("Altura: %d", cliprect.h);
+    printf("\n\n");
+
+
+    if (SDL_RenderCopy(Game::GetInstance("",0,0).GetRenderer(), texture, &cliprect , &dstrect) == -1)
         printf("SDL_RenderCopy com problemas: %s\n", SDL_GetError());
+}
+
+void Sprite::Update(float dt){
+
+}
+
+bool Sprite::Is(std::string type){
+    if (type == "Sprite de Face")
+        return true;
+    else 
+        return false;
 }
 
 int Sprite::GetLargura(){

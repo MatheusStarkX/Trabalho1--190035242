@@ -1,5 +1,6 @@
-dep/State.d bin/State.o: src/State.cpp include/State.h \
- include/SDL_include.h C:/msys64/mingw64/include/SDL2/SDL.h \
+dep/GameObject.d bin/GameObject.o: src/GameObject.cpp \
+ include/GameObject.h include/SDL_include.h \
+ C:/msys64/mingw64/include/SDL2/SDL.h \
  C:/msys64/mingw64/include/SDL2/SDL_main.h \
  C:/msys64/mingw64/include/SDL2/SDL_stdinc.h \
  C:/msys64/mingw64/include/SDL2/SDL_config.h \
@@ -178,10 +179,10 @@ dep/State.d bin/State.o: src/State.cpp include/State.h \
  C:/msys64/mingw64/include/SDL2/SDL_version.h \
  C:/msys64/mingw64/include/SDL2/SDL_locale.h \
  C:/msys64/mingw64/include/SDL2/SDL_misc.h \
- C:/msys64/mingw64/include/c++/10.3.0/string \
- C:/msys64/mingw64/include/c++/10.3.0/bits/stringfwd.h \
- C:/msys64/mingw64/include/c++/10.3.0/bits/memoryfwd.h \
- C:/msys64/mingw64/include/c++/10.3.0/bits/char_traits.h \
+ C:/msys64/mingw64/include/SDL2/SDL_image.h \
+ C:/msys64/mingw64/include/SDL2/SDL.h \
+ C:/msys64/mingw64/include/SDL2/SDL_mixer.h include/Geometria.h \
+ C:/msys64/mingw64/include/c++/10.3.0/vector \
  C:/msys64/mingw64/include/c++/10.3.0/bits/stl_algobase.h \
  C:/msys64/mingw64/include/c++/10.3.0/bits/functexcept.h \
  C:/msys64/mingw64/include/c++/10.3.0/bits/exception_defines.h \
@@ -197,9 +198,6 @@ dep/State.d bin/State.o: src/State.cpp include/State.h \
  C:/msys64/mingw64/include/c++/10.3.0/bits/ptr_traits.h \
  C:/msys64/mingw64/include/c++/10.3.0/debug/debug.h \
  C:/msys64/mingw64/include/c++/10.3.0/bits/predefined_ops.h \
- C:/msys64/mingw64/include/c++/10.3.0/bits/postypes.h \
- C:/msys64/mingw64/include/c++/10.3.0/cwchar \
- C:/msys64/mingw64/include/c++/10.3.0/cstdint \
  C:/msys64/mingw64/include/c++/10.3.0/bits/allocator.h \
  C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/c++allocator.h \
  C:/msys64/mingw64/include/c++/10.3.0/ext/new_allocator.h \
@@ -211,22 +209,28 @@ dep/State.d bin/State.o: src/State.cpp include/State.h \
  C:/msys64/mingw64/include/c++/10.3.0/typeinfo \
  C:/msys64/mingw64/include/c++/10.3.0/bits/hash_bytes.h \
  C:/msys64/mingw64/include/c++/10.3.0/bits/nested_exception.h \
- C:/msys64/mingw64/include/c++/10.3.0/bits/localefwd.h \
- C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/c++locale.h \
- C:/msys64/mingw64/include/c++/10.3.0/clocale \
- C:/msys64/mingw64/x86_64-w64-mingw32/include/locale.h \
- C:/msys64/mingw64/include/c++/10.3.0/iosfwd \
- C:/msys64/mingw64/include/c++/10.3.0/cctype \
- C:/msys64/mingw64/include/c++/10.3.0/bits/ostream_insert.h \
- C:/msys64/mingw64/include/c++/10.3.0/bits/cxxabi_forced.h \
- C:/msys64/mingw64/include/c++/10.3.0/bits/stl_function.h \
- C:/msys64/mingw64/include/c++/10.3.0/backward/binders.h \
- C:/msys64/mingw64/include/c++/10.3.0/bits/range_access.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/memoryfwd.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/stl_construct.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/stl_uninitialized.h \
+ C:/msys64/mingw64/include/c++/10.3.0/ext/alloc_traits.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/alloc_traits.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/stl_vector.h \
  C:/msys64/mingw64/include/c++/10.3.0/initializer_list \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/stl_bvector.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/functional_hash.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/range_access.h \
  C:/msys64/mingw64/include/c++/10.3.0/bits/iterator_concepts.h \
  C:/msys64/mingw64/include/c++/10.3.0/concepts \
  C:/msys64/mingw64/include/c++/10.3.0/bits/range_cmp.h \
- C:/msys64/mingw64/include/c++/10.3.0/bits/basic_string.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/vector.tcc \
+ C:/msys64/mingw64/include/c++/10.3.0/memory \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/stl_tempbuf.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/stl_raw_storage_iter.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/ranges_uninitialized.h \
+ C:/msys64/mingw64/include/c++/10.3.0/iosfwd \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/stringfwd.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/postypes.h \
+ C:/msys64/mingw64/include/c++/10.3.0/cwchar \
  C:/msys64/mingw64/include/c++/10.3.0/ext/atomicity.h \
  C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/gthr.h \
  C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/gthr-default.h \
@@ -241,21 +245,9 @@ dep/State.d bin/State.o: src/State.cpp include/State.h \
  C:/msys64/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
  C:/msys64/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
  C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/atomic_word.h \
- C:/msys64/mingw64/include/c++/10.3.0/ext/alloc_traits.h \
- C:/msys64/mingw64/include/c++/10.3.0/bits/alloc_traits.h \
- C:/msys64/mingw64/include/c++/10.3.0/bits/stl_construct.h \
- C:/msys64/mingw64/include/c++/10.3.0/ext/string_conversions.h \
- C:/msys64/mingw64/include/c++/10.3.0/cstdio \
- C:/msys64/mingw64/include/c++/10.3.0/cerrno \
- C:/msys64/mingw64/include/c++/10.3.0/bits/charconv.h \
- C:/msys64/mingw64/include/c++/10.3.0/bits/functional_hash.h \
- C:/msys64/mingw64/include/c++/10.3.0/bits/basic_string.tcc \
- C:/msys64/mingw64/include/c++/10.3.0/memory \
- C:/msys64/mingw64/include/c++/10.3.0/bits/stl_uninitialized.h \
- C:/msys64/mingw64/include/c++/10.3.0/bits/stl_tempbuf.h \
- C:/msys64/mingw64/include/c++/10.3.0/bits/stl_raw_storage_iter.h \
- C:/msys64/mingw64/include/c++/10.3.0/bits/ranges_uninitialized.h \
  C:/msys64/mingw64/include/c++/10.3.0/ext/concurrence.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/stl_function.h \
+ C:/msys64/mingw64/include/c++/10.3.0/backward/binders.h \
  C:/msys64/mingw64/include/c++/10.3.0/bits/uses_allocator.h \
  C:/msys64/mingw64/include/c++/10.3.0/bits/unique_ptr.h \
  C:/msys64/mingw64/include/c++/10.3.0/utility \
@@ -272,16 +264,23 @@ dep/State.d bin/State.o: src/State.cpp include/State.h \
  C:/msys64/mingw64/include/c++/10.3.0/bits/atomic_base.h \
  C:/msys64/mingw64/include/c++/10.3.0/bits/atomic_lockfree_defines.h \
  C:/msys64/mingw64/include/c++/10.3.0/backward/auto_ptr.h \
- include/Sprite.h include/GameObject.h \
- C:/msys64/mingw64/include/SDL2/SDL_image.h \
- C:/msys64/mingw64/include/SDL2/SDL.h \
- C:/msys64/mingw64/include/SDL2/SDL_mixer.h include/Geometria.h \
- C:/msys64/mingw64/include/c++/10.3.0/vector \
- C:/msys64/mingw64/include/c++/10.3.0/bits/stl_vector.h \
- C:/msys64/mingw64/include/c++/10.3.0/bits/stl_bvector.h \
- C:/msys64/mingw64/include/c++/10.3.0/bits/vector.tcc include/Sound.h \
- include/Face.h
-include/State.h:
+ C:/msys64/mingw64/include/c++/10.3.0/cstdint \
+ C:/msys64/mingw64/include/c++/10.3.0/string \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/char_traits.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/localefwd.h \
+ C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/c++locale.h \
+ C:/msys64/mingw64/include/c++/10.3.0/clocale \
+ C:/msys64/mingw64/x86_64-w64-mingw32/include/locale.h \
+ C:/msys64/mingw64/include/c++/10.3.0/cctype \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/ostream_insert.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/cxxabi_forced.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/basic_string.h \
+ C:/msys64/mingw64/include/c++/10.3.0/ext/string_conversions.h \
+ C:/msys64/mingw64/include/c++/10.3.0/cstdio \
+ C:/msys64/mingw64/include/c++/10.3.0/cerrno \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/charconv.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/basic_string.tcc
+include/GameObject.h:
 include/SDL_include.h:
 C:/msys64/mingw64/include/SDL2/SDL.h:
 C:/msys64/mingw64/include/SDL2/SDL_main.h:
@@ -462,10 +461,11 @@ C:/msys64/mingw64/include/SDL2/SDL_timer.h:
 C:/msys64/mingw64/include/SDL2/SDL_version.h:
 C:/msys64/mingw64/include/SDL2/SDL_locale.h:
 C:/msys64/mingw64/include/SDL2/SDL_misc.h:
-C:/msys64/mingw64/include/c++/10.3.0/string:
-C:/msys64/mingw64/include/c++/10.3.0/bits/stringfwd.h:
-C:/msys64/mingw64/include/c++/10.3.0/bits/memoryfwd.h:
-C:/msys64/mingw64/include/c++/10.3.0/bits/char_traits.h:
+C:/msys64/mingw64/include/SDL2/SDL_image.h:
+C:/msys64/mingw64/include/SDL2/SDL.h:
+C:/msys64/mingw64/include/SDL2/SDL_mixer.h:
+include/Geometria.h:
+C:/msys64/mingw64/include/c++/10.3.0/vector:
 C:/msys64/mingw64/include/c++/10.3.0/bits/stl_algobase.h:
 C:/msys64/mingw64/include/c++/10.3.0/bits/functexcept.h:
 C:/msys64/mingw64/include/c++/10.3.0/bits/exception_defines.h:
@@ -481,9 +481,6 @@ C:/msys64/mingw64/include/c++/10.3.0/bits/stl_iterator.h:
 C:/msys64/mingw64/include/c++/10.3.0/bits/ptr_traits.h:
 C:/msys64/mingw64/include/c++/10.3.0/debug/debug.h:
 C:/msys64/mingw64/include/c++/10.3.0/bits/predefined_ops.h:
-C:/msys64/mingw64/include/c++/10.3.0/bits/postypes.h:
-C:/msys64/mingw64/include/c++/10.3.0/cwchar:
-C:/msys64/mingw64/include/c++/10.3.0/cstdint:
 C:/msys64/mingw64/include/c++/10.3.0/bits/allocator.h:
 C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/c++allocator.h:
 C:/msys64/mingw64/include/c++/10.3.0/ext/new_allocator.h:
@@ -495,22 +492,28 @@ C:/msys64/mingw64/include/c++/10.3.0/bits/cxxabi_init_exception.h:
 C:/msys64/mingw64/include/c++/10.3.0/typeinfo:
 C:/msys64/mingw64/include/c++/10.3.0/bits/hash_bytes.h:
 C:/msys64/mingw64/include/c++/10.3.0/bits/nested_exception.h:
-C:/msys64/mingw64/include/c++/10.3.0/bits/localefwd.h:
-C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/c++locale.h:
-C:/msys64/mingw64/include/c++/10.3.0/clocale:
-C:/msys64/mingw64/x86_64-w64-mingw32/include/locale.h:
-C:/msys64/mingw64/include/c++/10.3.0/iosfwd:
-C:/msys64/mingw64/include/c++/10.3.0/cctype:
-C:/msys64/mingw64/include/c++/10.3.0/bits/ostream_insert.h:
-C:/msys64/mingw64/include/c++/10.3.0/bits/cxxabi_forced.h:
-C:/msys64/mingw64/include/c++/10.3.0/bits/stl_function.h:
-C:/msys64/mingw64/include/c++/10.3.0/backward/binders.h:
-C:/msys64/mingw64/include/c++/10.3.0/bits/range_access.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/memoryfwd.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_construct.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_uninitialized.h:
+C:/msys64/mingw64/include/c++/10.3.0/ext/alloc_traits.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/alloc_traits.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_vector.h:
 C:/msys64/mingw64/include/c++/10.3.0/initializer_list:
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_bvector.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/functional_hash.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/range_access.h:
 C:/msys64/mingw64/include/c++/10.3.0/bits/iterator_concepts.h:
 C:/msys64/mingw64/include/c++/10.3.0/concepts:
 C:/msys64/mingw64/include/c++/10.3.0/bits/range_cmp.h:
-C:/msys64/mingw64/include/c++/10.3.0/bits/basic_string.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/vector.tcc:
+C:/msys64/mingw64/include/c++/10.3.0/memory:
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_tempbuf.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_raw_storage_iter.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/ranges_uninitialized.h:
+C:/msys64/mingw64/include/c++/10.3.0/iosfwd:
+C:/msys64/mingw64/include/c++/10.3.0/bits/stringfwd.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/postypes.h:
+C:/msys64/mingw64/include/c++/10.3.0/cwchar:
 C:/msys64/mingw64/include/c++/10.3.0/ext/atomicity.h:
 C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/gthr.h:
 C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/gthr-default.h:
@@ -525,21 +528,9 @@ C:/msys64/mingw64/x86_64-w64-mingw32/include/pthread_time.h:
 C:/msys64/mingw64/x86_64-w64-mingw32/include/pthread_compat.h:
 C:/msys64/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h:
 C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/atomic_word.h:
-C:/msys64/mingw64/include/c++/10.3.0/ext/alloc_traits.h:
-C:/msys64/mingw64/include/c++/10.3.0/bits/alloc_traits.h:
-C:/msys64/mingw64/include/c++/10.3.0/bits/stl_construct.h:
-C:/msys64/mingw64/include/c++/10.3.0/ext/string_conversions.h:
-C:/msys64/mingw64/include/c++/10.3.0/cstdio:
-C:/msys64/mingw64/include/c++/10.3.0/cerrno:
-C:/msys64/mingw64/include/c++/10.3.0/bits/charconv.h:
-C:/msys64/mingw64/include/c++/10.3.0/bits/functional_hash.h:
-C:/msys64/mingw64/include/c++/10.3.0/bits/basic_string.tcc:
-C:/msys64/mingw64/include/c++/10.3.0/memory:
-C:/msys64/mingw64/include/c++/10.3.0/bits/stl_uninitialized.h:
-C:/msys64/mingw64/include/c++/10.3.0/bits/stl_tempbuf.h:
-C:/msys64/mingw64/include/c++/10.3.0/bits/stl_raw_storage_iter.h:
-C:/msys64/mingw64/include/c++/10.3.0/bits/ranges_uninitialized.h:
 C:/msys64/mingw64/include/c++/10.3.0/ext/concurrence.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_function.h:
+C:/msys64/mingw64/include/c++/10.3.0/backward/binders.h:
 C:/msys64/mingw64/include/c++/10.3.0/bits/uses_allocator.h:
 C:/msys64/mingw64/include/c++/10.3.0/bits/unique_ptr.h:
 C:/msys64/mingw64/include/c++/10.3.0/utility:
@@ -556,15 +547,19 @@ C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr_atomic.h:
 C:/msys64/mingw64/include/c++/10.3.0/bits/atomic_base.h:
 C:/msys64/mingw64/include/c++/10.3.0/bits/atomic_lockfree_defines.h:
 C:/msys64/mingw64/include/c++/10.3.0/backward/auto_ptr.h:
-include/Sprite.h:
-include/GameObject.h:
-C:/msys64/mingw64/include/SDL2/SDL_image.h:
-C:/msys64/mingw64/include/SDL2/SDL.h:
-C:/msys64/mingw64/include/SDL2/SDL_mixer.h:
-include/Geometria.h:
-C:/msys64/mingw64/include/c++/10.3.0/vector:
-C:/msys64/mingw64/include/c++/10.3.0/bits/stl_vector.h:
-C:/msys64/mingw64/include/c++/10.3.0/bits/stl_bvector.h:
-C:/msys64/mingw64/include/c++/10.3.0/bits/vector.tcc:
-include/Sound.h:
-include/Face.h:
+C:/msys64/mingw64/include/c++/10.3.0/cstdint:
+C:/msys64/mingw64/include/c++/10.3.0/string:
+C:/msys64/mingw64/include/c++/10.3.0/bits/char_traits.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/localefwd.h:
+C:/msys64/mingw64/include/c++/10.3.0/x86_64-w64-mingw32/bits/c++locale.h:
+C:/msys64/mingw64/include/c++/10.3.0/clocale:
+C:/msys64/mingw64/x86_64-w64-mingw32/include/locale.h:
+C:/msys64/mingw64/include/c++/10.3.0/cctype:
+C:/msys64/mingw64/include/c++/10.3.0/bits/ostream_insert.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/cxxabi_forced.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/basic_string.h:
+C:/msys64/mingw64/include/c++/10.3.0/ext/string_conversions.h:
+C:/msys64/mingw64/include/c++/10.3.0/cstdio:
+C:/msys64/mingw64/include/c++/10.3.0/cerrno:
+C:/msys64/mingw64/include/c++/10.3.0/bits/charconv.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/basic_string.tcc:

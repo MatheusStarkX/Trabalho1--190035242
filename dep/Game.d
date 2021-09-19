@@ -276,7 +276,34 @@ dep/Game.d bin/Game.o: src/Game.cpp include/Game.h include/SDL_include.h \
  C:/msys64/mingw64/include/c++/10.3.0/bits/ostream.tcc \
  C:/msys64/mingw64/include/c++/10.3.0/istream \
  C:/msys64/mingw64/include/c++/10.3.0/bits/istream.tcc include/State.h \
- include/Sprite.h include/Music.h
+ C:/msys64/mingw64/include/c++/10.3.0/memory \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/stl_uninitialized.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/stl_tempbuf.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/stl_raw_storage_iter.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/ranges_uninitialized.h \
+ C:/msys64/mingw64/include/c++/10.3.0/ext/concurrence.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/uses_allocator.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/unique_ptr.h \
+ C:/msys64/mingw64/include/c++/10.3.0/utility \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/stl_relops.h \
+ C:/msys64/mingw64/include/c++/10.3.0/tuple \
+ C:/msys64/mingw64/include/c++/10.3.0/array \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/invoke.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr_base.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/allocated_ptr.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/refwrap.h \
+ C:/msys64/mingw64/include/c++/10.3.0/ext/aligned_buffer.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr_atomic.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/atomic_base.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/atomic_lockfree_defines.h \
+ C:/msys64/mingw64/include/c++/10.3.0/backward/auto_ptr.h \
+ include/Sprite.h include/GameObject.h include/Geometria.h \
+ C:/msys64/mingw64/include/c++/10.3.0/vector \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/stl_vector.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/stl_bvector.h \
+ C:/msys64/mingw64/include/c++/10.3.0/bits/vector.tcc include/Sound.h \
+ include/Face.h
 include/Game.h:
 include/SDL_include.h:
 C:/msys64/mingw64/include/SDL2/SDL.h:
@@ -557,5 +584,34 @@ C:/msys64/mingw64/include/c++/10.3.0/bits/ostream.tcc:
 C:/msys64/mingw64/include/c++/10.3.0/istream:
 C:/msys64/mingw64/include/c++/10.3.0/bits/istream.tcc:
 include/State.h:
+C:/msys64/mingw64/include/c++/10.3.0/memory:
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_uninitialized.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_tempbuf.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_raw_storage_iter.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/ranges_uninitialized.h:
+C:/msys64/mingw64/include/c++/10.3.0/ext/concurrence.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/uses_allocator.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/unique_ptr.h:
+C:/msys64/mingw64/include/c++/10.3.0/utility:
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_relops.h:
+C:/msys64/mingw64/include/c++/10.3.0/tuple:
+C:/msys64/mingw64/include/c++/10.3.0/array:
+C:/msys64/mingw64/include/c++/10.3.0/bits/invoke.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr_base.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/allocated_ptr.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/refwrap.h:
+C:/msys64/mingw64/include/c++/10.3.0/ext/aligned_buffer.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/shared_ptr_atomic.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/atomic_base.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/atomic_lockfree_defines.h:
+C:/msys64/mingw64/include/c++/10.3.0/backward/auto_ptr.h:
 include/Sprite.h:
-include/Music.h:
+include/GameObject.h:
+include/Geometria.h:
+C:/msys64/mingw64/include/c++/10.3.0/vector:
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_vector.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/stl_bvector.h:
+C:/msys64/mingw64/include/c++/10.3.0/bits/vector.tcc:
+include/Sound.h:
+include/Face.h:

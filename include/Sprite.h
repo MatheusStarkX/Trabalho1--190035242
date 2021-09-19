@@ -1,26 +1,24 @@
-#define INCLUDE_SDL
-#define INCLUDE_SDL_IMAGE
-#include "SDL_include.h"
+#include "GameObject.h"
 
-//#include <SDL2/SDL.h>
-//#include <SDL2/SDL_image.h>
 #include <string>
 #ifndef SPRITE_H
 #define SPRITE_H
 
-class Sprite {
+class Sprite : public Component {
     private:
         SDL_Texture *texture;
-        int largura = 1024;
-        int altura = 600;
-        SDL_Rect clipRect;
+        int largura;
+        int altura;
+        SDL_Rect cliprect;
     public:
-        Sprite();
-        Sprite(std::string file);
+        Sprite(GameObject &associated);
+        Sprite(std::string file, GameObject &associated);
         ~Sprite();
         void Open(std::string file);
         void SetClip(int x, int y, int w, int h);
-        void Render(int x, int y);
+        void Render();
+        void Update(float dt);
+        bool Is(std::string type);
         int GetLargura();
         int GetAltura();
         bool IsOpen();
