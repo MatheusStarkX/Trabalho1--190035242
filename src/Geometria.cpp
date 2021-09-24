@@ -76,12 +76,9 @@ float Rect::DistCentro(Rect *obj, Rect *obj2){
 }
 
 bool Rect::EstaDentro(float x, float y){
-    if (x > centro[0]-(Larg/2) && x < centro[0]+(Larg/2)){
-        if (y > centro[1]-(Alt/2) && y < centro[1]+(Alt/2))
-            return true;
-    }
-    else
-        return false;     
+    if (x > CSEx && x < (CSEx + Larg) && y > CSEy && y < (CSEy + Alt))
+        return true;
+    return false; 
 }
 
 // Falta a soma de rect com vetor (Rect) e a inclinação da reta dada por 2 pontos (Vet2)

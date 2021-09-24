@@ -8,6 +8,8 @@ void Face::Damage(int damage){
     hitpoints -= damage;
     if (hitpoints <= 0){
         associated.RequestDelete();
+        Sound *morte = (Sound*)associated.GetComponent("Musiquinha");
+        morte->Play(1);                  
     }
 }
 

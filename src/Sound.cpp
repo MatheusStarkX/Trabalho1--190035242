@@ -25,7 +25,6 @@ void Sound::Open(std::string file){
     chunk = Mix_LoadWAV(file.c_str());
     if (!IsOpen())
         printf("Problema no carregamento da música: %s\n", SDL_GetError());
-    Play(1);
 }
 
 bool Sound::IsOpen(){
@@ -48,7 +47,7 @@ void Sound::Update(float dt){
 }
 
 bool Sound::Is(std::string type){
-    if (type == "Face")
+    if (type == "Musiquinha")
         return true;
     else 
         return false;

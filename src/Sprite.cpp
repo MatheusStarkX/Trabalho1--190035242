@@ -26,6 +26,9 @@ void Sprite::Open(std::string file){
 
     if (SDL_QueryTexture(texture, nullptr, nullptr, &largura, &altura) == -1)
         printf("Consulta da textura com problemas: %s\n", SDL_GetError());
+
+    SetClip(0,0,largura,altura);
+    associated.box = Rect(associated.box.CSEx,associated.box.CSEy,largura,altura);
 }
 
 void Sprite::SetClip(int x, int y, int w, int h){
@@ -37,20 +40,10 @@ void Sprite::SetClip(int x, int y, int w, int h){
 
 void Sprite::Render(){
     SDL_Rect dstrect;
-    SetClip(associated.box.CSEx, associated.box.CSEy, associated.box.Larg, associated.box.Alt);
-    dstrect.x = cliprect.x;
-    dstrect.y = cliprect.y;
+    dstrect.x = associated.box.CSEx;
+    dstrect.y = associated.box.CSEy;
     dstrect.w = cliprect.w;
     dstrect.h = cliprect.h;
-
-    printf("Eixo X: %d", cliprect.x);
-    printf("\n");
-    printf("Eixo Y: %d", cliprect.y);
-    printf("\n");
-    printf("Largura: %d", cliprect.w);
-    printf("\n");
-    printf("Altura: %d", cliprect.h);
-    printf("\n\n");
 
     if (SDL_RenderCopy(Game::GetInstance("",0,0).GetRenderer(), texture, &cliprect , &dstrect) == -1)
         printf("SDL_RenderCopy com problemas: %s\n", SDL_GetError());

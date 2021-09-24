@@ -10,6 +10,7 @@ State::State(){
 	bg->box.Larg = (float)fundo->GetLargura();
 	bg->box.Alt = (float)fundo->GetAltura();	
 	Sound *musica = new Sound("assets/audio/stageState.ogg", *bg);
+	musica->Play(1);
 	bg->AddComponent(fundo);
 	bg->AddComponent(musica);
 	objectArray.emplace_back(bg);
@@ -51,11 +52,9 @@ void State::Render(){
 void State::AddObject(int posX, int posY){
 	GameObject *inimigo;
 	inimigo = new GameObject();
-	Sprite *faceta = new Sprite("assets/img/penguinface.png", *inimigo);
 	inimigo->box.CSEx = (float)posX;
 	inimigo->box.CSEy = (float)posY;
-	inimigo->box.Larg = (float)faceta->GetLargura();
-	inimigo->box.Alt = (float)faceta->GetAltura();
+	Sprite *faceta = new Sprite("assets/img/penguinface.png", *inimigo);
 	Sound *barulho = new Sound("assets/audio/boom.wav", *inimigo);
 	Face *face = new Face(*inimigo);
 	inimigo->AddComponent(faceta);
@@ -85,7 +84,7 @@ void State::Input() {
 			// Percorrer de trás pra frente pra sempre clicar no objeto mais de cima
 			for(int i = objectArray.size() - 1; i >= 0; --i) {
 				// Obtem o ponteiro e casta pra Face.
-				GameObject* go = (GameObject*) objectArray[i].get();
+				GameObject *go = (GameObject*)objectArray[i].get();
 				// Nota: Desencapsular o ponteiro é algo que devemos evitar ao máximo.
 				// O propósito do unique_ptr é manter apenas uma cópia daquele ponteiro,
 				// ao usar get(), violamos esse princípio e estamos menos seguros.
@@ -93,8 +92,8 @@ void State::Input() {
 				// chamar funções de GameObjects, use objectArray[i]->função() direto.
 
 				if(go->box.EstaDentro((float)mouseX, (float)mouseY) ) {
-					Face* face = (Face*)go->GetComponent( "Face" );
-					if ( nullptr != face ) {
+					Face *face = (Face*)go->GetComponent("Face");
+					if (nullptr != face) {
 						// Aplica dano
 						face->Damage(std::rand() % 10 + 10);
 						// Sai do loop (só queremos acertar um)
