@@ -13,13 +13,17 @@ void TileMap::Load(std::string file){
         printf("Falha da abertura do TileMap");
     else{
         while(fgets(line, sizeof(line), mapa)){
-            valor = strtok(line, ",");
-            int num = atoi(valor);
-            tileMatrix.emplace_back(num-1);
+            valor = strtok(line, " ,\n");
+            if (valor != NULL){
+                int num = atoi(valor);
+                tileMatrix.emplace_back(num-1);
+            }
             while (valor != NULL){
-                valor = strtok(NULL, ",");
-                int sla = atoi(valor);
-                tileMatrix.emplace_back(sla-1);
+                valor = strtok(NULL, " ,\n");
+                if (valor != NULL){
+                    int sla = atoi(valor);
+                    tileMatrix.emplace_back(sla-1);
+                }
             }
         }
         fclose(mapa);
@@ -27,9 +31,7 @@ void TileMap::Load(std::string file){
     mapLargura = tileMatrix[0]+1;
     mapAltura = tileMatrix[1]+1;
     mapProfundidade = tileMatrix[2]+1;
-    tileMatrix.erase(tileMatrix.begin(),tileMatrix.begin()+7);
-    for(int i=0;i<10;i++)
-       printf("Numeros: %d\n", tileMatrix[i]);
+    tileMatrix.erase(tileMatrix.begin(),tileMatrix.begin()+3);
 }
 
 void TileMap::SetTileSet(TileSet *tileset){
@@ -45,17 +47,14 @@ void TileMap::RenderLayer(int layer, int cameraX, int cameraY){
     int inicio = mapLargura*mapAltura*(layer-1);
     int fim = mapLargura*mapAltura*layer;
     int x = 0, y = 0;
-    for(int i=inicio; i<fim; i++){
-        x += tileSet->GetTileLargura(); 
+    for(int i=inicio; i<fim; i++){ 
+        //printf("tileMatrix: %d\n",tileMatrix[i]);
+        tileSet->RenderTile(tileMatrix[i],x,y);
+        x += tileSet->GetTileLargura();
         if ((i+1)%mapLargura == 0){
             y += tileSet->GetTileAltura();
             x = 0;
         }
-        //printf("tileMatrix: %d\n",tileMatrix[i]);
-        tileSet->RenderTile(tileMatrix[i],x,y);
-        //printf("Indice %d\n", tileMatrix[i]);
-        //printf("x: %d\n",x);
-        //printf("y: %d\n",y);
     }
 }
 

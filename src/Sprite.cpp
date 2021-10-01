@@ -12,16 +12,13 @@ Sprite::Sprite(std::string file, GameObject &associated) : Component(associated)
 }
 
 Sprite::~Sprite(){
-    if (IsOpen())
-        SDL_DestroyTexture(texture);
     texture = nullptr;
 }
 
 void Sprite::Open(std::string file){
-    if (IsOpen())
-        SDL_DestroyTexture(texture);
-
-    texture = IMG_LoadTexture(Game::GetInstance("",0,0).GetRenderer(), file.c_str());
+    Resources *imagem;
+    texture = imagem->GetImage(file);
+    //texture = IMG_LoadTexture(Game::GetInstance("",0,0).GetRenderer(), file.c_str());
     if(!IsOpen())
         printf("Renderizador com problemas: %s\n", SDL_GetError());
 

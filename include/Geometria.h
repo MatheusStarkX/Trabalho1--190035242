@@ -1,8 +1,8 @@
+#include "cmath"
+
 #ifndef GEOMETRIA_H
 #define GEOMETRIA_H
 #define _USE_MATH_DEFINES
-
-#include "cmath"
 
 class Vet2 {
     private:
