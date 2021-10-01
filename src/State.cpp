@@ -1,9 +1,9 @@
 #include "State.h"
 
 State::State(){
+	//Fundo Inicial
     quitRequested = false;
-	GameObject *bg;
-	bg = new GameObject();
+	GameObject *bg = new GameObject();
 	Sprite *fundo = new Sprite("assets/img/ocean.jpg", *bg);
 	bg->box.CSEx = (float)0;
 	bg->box.CSEy = (float)0;
@@ -14,6 +14,14 @@ State::State(){
 	bg->AddComponent(fundo);
 	bg->AddComponent(musica);
 	objectArray.emplace_back(bg);
+	//Mapa
+	GameObject *bk = new GameObject();
+	TileSet *azulejos = new TileSet(64,64,"assets/img/tileset.png");
+	TileMap *mapinha = new TileMap(*bk,"assets/map/tileMap.txt", azulejos);
+	bk->box.CSEx = (float)0;
+	bk->box.CSEy = (float)0;
+	bk->AddComponent(mapinha);
+	objectArray.emplace_back(bk);
 }
 
 State::~State(){
@@ -50,8 +58,7 @@ void State::Render(){
 }
 
 void State::AddObject(int posX, int posY){
-	GameObject *inimigo;
-	inimigo = new GameObject();
+	GameObject *inimigo = new GameObject();
 	inimigo->box.CSEx = (float)posX;
 	inimigo->box.CSEy = (float)posY;
 	Sprite *faceta = new Sprite("assets/img/penguinface.png", *inimigo);

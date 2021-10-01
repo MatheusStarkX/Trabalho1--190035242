@@ -9,6 +9,7 @@
 #include "Sound.h"
 #include "Geometria.h"
 #include "Face.h"
+#include "TileMap.h"
 
 #ifndef STAGE_H
 #define STAGE_H

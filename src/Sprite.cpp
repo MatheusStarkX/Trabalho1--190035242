@@ -1,13 +1,14 @@
 #include "Sprite.h"
 #include "Game.h"
 
-Sprite::Sprite(GameObject &associated) : Component(associated) {
+Sprite::Sprite() : Component(associated) {
     texture = nullptr;
 }
 
 Sprite::Sprite(std::string file, GameObject &associated) : Component(associated){
     texture = nullptr;
     Open(file);
+    associated.box = Rect(associated.box.CSEx,associated.box.CSEy,largura,altura);
 }
 
 Sprite::~Sprite(){
@@ -28,7 +29,6 @@ void Sprite::Open(std::string file){
         printf("Consulta da textura com problemas: %s\n", SDL_GetError());
 
     SetClip(0,0,largura,altura);
-    associated.box = Rect(associated.box.CSEx,associated.box.CSEy,largura,altura);
 }
 
 void Sprite::SetClip(int x, int y, int w, int h){
@@ -39,9 +39,13 @@ void Sprite::SetClip(int x, int y, int w, int h){
 }
 
 void Sprite::Render(){
+    Render(associated.box.CSEx, associated.box.CSEy);
+}
+
+void Sprite::Render(float x, float y){
     SDL_Rect dstrect;
-    dstrect.x = associated.box.CSEx;
-    dstrect.y = associated.box.CSEy;
+    dstrect.x = x;
+    dstrect.y = y;
     dstrect.w = cliprect.w;
     dstrect.h = cliprect.h;
 
