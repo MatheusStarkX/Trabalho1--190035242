@@ -3,7 +3,6 @@
 #define INCLUDE_SDL_MIXER
 #include "SDL_include.h"
 
-//#include <SDL2/SDL.h>
 #include <string>
 #include <iostream>
 #include "State.h"

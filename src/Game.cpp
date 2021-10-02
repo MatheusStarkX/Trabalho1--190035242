@@ -69,8 +69,7 @@ void Game::Run(){
         SDL_RenderPresent(renderer);
         SDL_Delay(33);
     }
-    Resources *recursos;
-    recursos->ClearImages();
-    recursos->ClearMusics();
-    recursos->ClearSounds();
+    Resources::ClearImages();
+    //recursos->ClearMusics();
+    Resources::ClearSounds();
 }

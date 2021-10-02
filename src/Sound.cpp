@@ -1,4 +1,6 @@
 #include "Sound.h"
+#include "Game.h"
+#include "Resources.h"
 
 Sound::Sound(GameObject &associated) : Component(associated) {
     chunk = nullptr;
@@ -22,7 +24,7 @@ void Sound::Stop(){
 }
 
 void Sound::Open(std::string file){
-    chunk = Mix_LoadWAV(file.c_str());
+    chunk = Resources::GetSound(file);
     if (!IsOpen())
         printf("Problema no carregamento da música: %s\n", SDL_GetError());
 }
@@ -37,7 +39,6 @@ bool Sound::IsOpen(){
 Sound::~Sound(){
     if (!IsOpen()){
         Stop();
-        Mix_FreeChunk(chunk);
     }
     chunk = nullptr;
 }

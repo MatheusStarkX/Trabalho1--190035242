@@ -1,5 +1,4 @@
 #include "GameObject.h"
-#include "Resources.h"
 
 #include <string>
 #ifndef SPRITE_H
