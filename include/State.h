@@ -10,6 +10,8 @@
 #include "Geometria.h"
 #include "Face.h"
 #include "TileMap.h"
+#include "Camera.h"
+#include "CameraFollower.h"
 
 #ifndef STAGE_H
 #define STAGE_H
@@ -25,7 +27,7 @@ class State {
         void AddObject(int mouseX, int mouseY);
         bool QuitRequested();
         void LoadAssets();
-        void Update(float dt); // float dt
+        void Update(float dt);
         void Render();
 };
 

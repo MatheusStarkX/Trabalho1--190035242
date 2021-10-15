@@ -65,14 +65,14 @@ Rect::Rect(float CSEx, float CSEy, float Larg, float Alt){
     this->Alt = Alt;
 }
 
-float *Rect::Centro(float *centro){
-    centro[0] = CSEx + Larg/2;
-    centro[1] = CSEy + Alt/2;
-    return centro;
+Vet2 Rect::Centro(){
+    float x = CSEx + Larg/2;
+    float y = CSEy + Alt/2;
+    return Vet2(x,y);
 }
 
 float Rect::DistCentro(Rect *obj, Rect *obj2){
-    return sqrt(pow(obj->centro[0] - obj2->centro[0],2) + pow(obj->centro[1] - obj2->centro[1],2));
+    return sqrt(pow(obj->Centro().x - obj2->Centro().x,2) + pow(obj->Centro().y - obj2->Centro().y,2));
 }
 
 bool Rect::EstaDentro(float x, float y){

@@ -54,7 +54,7 @@ void Sprite::Update(float dt){
 }
 
 bool Sprite::Is(std::string type){
-    if (type == "Sprite de Face")
+    if (type == "Sprite")
         return true;
     else 
         return false;

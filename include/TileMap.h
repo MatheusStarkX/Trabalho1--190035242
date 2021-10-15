@@ -1,5 +1,6 @@
 #include "GameObject.h"
 #include "TileSet.h"
+#include "Camera.h"
 
 #include <string>
 #ifndef TILEMAP_H

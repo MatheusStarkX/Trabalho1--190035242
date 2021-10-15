@@ -11,6 +11,8 @@ State::State(){
 	bg->box.Alt = (float)fundo->GetAltura();	
 	Sound *musica = new Sound("assets/audio/stageState.ogg", *bg);
 	musica->Play(1);
+	//CameraFollower *seguidor = new CameraFollower(*bg);
+	//bg->AddComponent(seguidor);
 	bg->AddComponent(fundo);
 	bg->AddComponent(musica);
 	objectArray.emplace_back(bg);
@@ -37,7 +39,18 @@ void State::LoadAssets(){
 }
 
 void State::Update(float dt){
-	Input();
+	//Input();
+	Camera::Update(dt);
+	if(InputManager::GetInstance().QuitRequested() || InputManager::GetInstance().KeyPress(ESCAPE_KEY)){
+		quitRequested = true;
+	}
+	if(InputManager::GetInstance().KeyPress(SDLK_SPACE)) {
+		int mouseX = InputManager::GetInstance().GetMouseX();
+		int mouseY = InputManager::GetInstance().GetMouseY();
+		Vet2 objPos = Vet2(200, 0).Rotacao(-M_PI + M_PI*(rand() % 1001)/500.0 ) + Vet2(mouseX,mouseY);
+		AddObject((int)objPos.x, (int)objPos.y);
+	}
+
 	std::vector<int> mortos;
 	for(unsigned int i=0; i<objectArray.size(); i++){
 		objectArray[i]->Update(dt);

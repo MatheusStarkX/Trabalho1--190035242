@@ -6,7 +6,7 @@ std::unordered_map<std::string, Mix_Chunk*> Resources::soundTable = {};
 SDL_Texture *Resources::GetImage(std::string file){
     auto imagem = imageTable.find(file);
     if (imagem == imageTable.end()){
-        //printf("Não encontrei a imagem, vou aloca-la!\n");
+        //printf("Nao encontrei a imagem, vou aloca-la!\n");
         SDL_Texture *textura = IMG_LoadTexture(Game::GetInstance("",0,0).GetRenderer(), file.c_str());
         if (textura == nullptr)
             printf("Falha na alocação da textura!\n");

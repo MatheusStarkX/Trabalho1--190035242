@@ -1,5 +1,6 @@
 #include "GameObject.h"
 #include "Sound.h"
+#include "InputManager.h"
 
 #include <string>
 #ifndef FACE_H

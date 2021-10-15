@@ -2,6 +2,8 @@
 #include "Resources.h"
 
 Game *Game::instance = nullptr;
+int frameStart=0;
+float dt=0;
 
 Game& Game::GetInstance(string titulo, int altura, int largura) {
     if (instance != nullptr)
@@ -64,7 +66,11 @@ SDL_Renderer *Game::GetRenderer(){
 
 void Game::Run(){
     while(state->QuitRequested() == false){
-        state->Update(3);
+        CalculateDeltaTime();
+        //printf("primeiro\n");
+        InputManager::GetInstance().Update();
+        //printf("Deu bom\n");
+        state->Update(GetDeltaTime());
         state->Render();
         SDL_RenderPresent(renderer);
         SDL_Delay(33);
@@ -72,4 +78,15 @@ void Game::Run(){
     Resources::ClearImages();
     //recursos->ClearMusics();
     Resources::ClearSounds();
+}
+
+void Game::CalculateDeltaTime(){
+    int antigo = frameStart;
+    frameStart = SDL_GetTicks();
+    dt = frameStart - antigo;
+    dt /= 1000;
+}
+
+float Game::GetDeltaTime(){
+    return dt;
 }

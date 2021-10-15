@@ -23,13 +23,11 @@ class Vet2 {
 };
 
 class Rect {
-    private:
-        float centro[2];
     public:
         float CSEx, CSEy, Larg, Alt;
         Rect();
         Rect(float CSEx, float CSEy, float Larg, float Alt);
-        float *Centro(float *centro);
+        Vet2 Centro();
         float DistCentro(Rect *obj, Rect *obj2);
         bool EstaDentro(float x, float y);
 };

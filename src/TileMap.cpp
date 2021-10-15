@@ -46,21 +46,20 @@ int &TileMap::At(int x, int y, int z){
 void TileMap::RenderLayer(int layer, int cameraX, int cameraY){
     int inicio = mapLargura*mapAltura*(layer-1);
     int fim = mapLargura*mapAltura*layer;
-    int x = 0, y = 0;
+    int x = cameraX, y = cameraY;
     for(int i=inicio; i<fim; i++){ 
-        //printf("tileMatrix: %d\n",tileMatrix[i]);
-        tileSet->RenderTile(tileMatrix[i],x,y);
+        tileSet->RenderTile(tileMatrix[i],(float)x,(float)y);
         x += tileSet->GetTileLargura();
         if ((i+1)%mapLargura == 0){
             y += tileSet->GetTileAltura();
-            x = 0;
+            x = cameraX;
         }
     }
 }
 
 void TileMap::Render(){
     for (int i=1; i <= GetProfundidade(); i++ )
-        RenderLayer(i);
+        RenderLayer(i, Camera::pos.x, Camera::pos.y);
 }
 
 void TileMap::Update(float dt){
@@ -73,7 +72,6 @@ bool TileMap::Is(std::string type){
     else 
         return false;
 }
-
 
 int TileMap::GetLargura(){
     return mapLargura;
