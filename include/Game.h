@@ -11,6 +11,7 @@
 #include <iostream>
 #include "State.h"
 #include "InputManager.h"
+#include "Resources.h"
 
 using namespace std;
 

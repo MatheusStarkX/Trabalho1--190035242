@@ -1,10 +1,11 @@
+#ifndef TILEMAP_H
+#define TILEMAP_H
+
 #include "GameObject.h"
 #include "TileSet.h"
 #include "Camera.h"
 
 #include <string>
-#ifndef TILEMAP_H
-#define TILEMAP_H
 
 class TileMap : public Component {
     private:

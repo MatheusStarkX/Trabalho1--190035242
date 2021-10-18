@@ -1,9 +1,8 @@
-#include "Sprite.h"
-
-#include <string>
-
 #ifndef TILESET_H
 #define TILESET_H
+
+#include "Sprite.h"
+#include <string>
 
 class TileSet {
     private:   

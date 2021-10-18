@@ -1,8 +1,8 @@
-#include "GameObject.h"
-#include "InputManager.h"
-
 #ifndef CAMERA_H
 #define CAMERA_H
+
+#include "GameObject.h"
+#include "InputManager.h"
 
 class Camera {
     private:

@@ -1,9 +1,10 @@
-#include "GameObject.h"
-
-#include <string>
-
 #ifndef SOUND_H
 #define SOUND_H
+
+#include "GameObject.h"
+#include "Game.h"
+#include "Resources.h"
+#include <string>
 
 class Sound : public Component {
     private:   

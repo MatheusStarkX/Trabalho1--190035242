@@ -1,9 +1,9 @@
+#ifndef RESOURCES_H
+#define RESOURCES_H
+
 #include <unordered_map>
 #include <string>
 #include "Game.h"
-
-#ifndef RESOURCES_H
-#define RESOURCES_H
 
 class Resources {
     private:

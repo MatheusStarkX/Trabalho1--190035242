@@ -1,3 +1,6 @@
+#ifndef GAMEOBJECT_H
+#define GAMEOBJECT_H
+
 #define INCLUDE_SDL
 #define INCLUDE_SDL_IMAGE
 #define INCLUDE_SDL_MIXER
@@ -7,9 +10,6 @@
 #include <vector>
 #include <memory>
 #include <string>
-
-#ifndef GAMEOBJECT_H
-#define GAMEOBJECT_H
 
 class Component;
 

@@ -1,8 +1,8 @@
-#include "GameObject.h"
-
-#include <string>
 #ifndef SPRITE_H
 #define SPRITE_H
+
+#include "GameObject.h"
+#include <string>
 
 class Sprite : public Component {
     private:

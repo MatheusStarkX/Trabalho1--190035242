@@ -1,10 +1,11 @@
+#ifndef FACE_H
+#define FACE_H
+
 #include "GameObject.h"
 #include "Sound.h"
 #include "InputManager.h"
 
 #include <string>
-#ifndef FACE_H
-#define FACE_H
 
 class Face : public Component {
     private:

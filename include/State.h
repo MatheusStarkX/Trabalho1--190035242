@@ -1,3 +1,6 @@
+#ifndef STATE_H
+#define STATE_H
+
 #define INCLUDE_SDL
 #define _USE_MATH_DEFINES
 #include "SDL_include.h"
@@ -12,9 +15,6 @@
 #include "TileMap.h"
 #include "Camera.h"
 #include "CameraFollower.h"
-
-#ifndef STAGE_H
-#define STAGE_H
 
 class State {
     private:
